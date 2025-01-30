@@ -3,14 +3,12 @@ import Img1 from "../../assets/women/Basket5.jpg";
 import Img2 from "../../assets/women/Basket6.jpg";
 import Img3 from "../../assets/women/Basket7.jpg";
 import Img4 from "../../assets/women/Basket8.jpg";
-import Basket1 from "../../assets/hero/basket4.png";
-import Basket3 from "../../assets/hero/Basket3.jpg";
+import Basket1 from "../../assets/hero/Basket1.jpg";
+import Basket3 from "../../assets/hero/Basket3.jpg"
 import Basket2 from "../../assets/hero/Basket2.jpg";
 import Basket4 from "../../assets/hero/Basket4.jpg";
-import Basket4 from "../../assets/hero/Basket4.png";
 import { FaStar } from "react-icons/fa6";
 
-// Initial set of baskets
 const initialProductsData = [
   {
     id: 1,
@@ -18,7 +16,7 @@ const initialProductsData = [
     title: "Handwoven Storage Basket",
     rating: 5.0,
     color: "Natural Fiber",
-    price: "Price: 100 cedis",
+    price: "100 cedis",
     aosDelay: "0",
   },
   {
@@ -27,7 +25,7 @@ const initialProductsData = [
     title: "Eco-Friendly Market Basket",
     rating: 4.5,
     color: "Recycled Material",
-    price: "Price: 100 cedis",
+    price: "100 cedis",
     aosDelay: "200",
   },
   {
@@ -36,7 +34,7 @@ const initialProductsData = [
     title: "Decorative Woven Basket",
     rating: 4.7,
     color: "Brown Weave",
-    price: "Price: 100 cedis",
+    price: "100 cedis",
     aosDelay: "400",
   },
   {
@@ -45,7 +43,7 @@ const initialProductsData = [
     title: "Picnic Basket with Lid",
     rating: 4.4,
     color: "Straw Weave",
-    price: "Price: 100 cedis",
+    price: "100 cedis",
     aosDelay: "600",
   },
   {
@@ -54,7 +52,7 @@ const initialProductsData = [
     title: "Small Handmade Basket",
     rating: 4.5,
     color: "Multicolor",
-    price: "Price: 100 cedis",
+    price: "100 cedis",
     aosDelay: "800",
   },
 ];
@@ -67,7 +65,7 @@ const additionalProductsData = [
     title: "Large Storage Basket",
     rating: 4.8,
     color: "Natural Fiber",
-    price: "Price: 120 cedis",
+    price: "120 cedis",
     aosDelay: "0",
   },
   {
@@ -76,7 +74,7 @@ const additionalProductsData = [
     title: "Round Woven Basket",
     rating: 4.6,
     color: "Brown Weave",
-    price: "Price: 90 cedis",
+    price: "90 cedis",
     aosDelay: "200",
   },
   {
@@ -85,7 +83,7 @@ const additionalProductsData = [
     title: "Elegant Decorative Basket",
     rating: 4.9,
     color: "Straw Weave",
-    price: "Price: 110 cedis",
+    price: "110 cedis",
     aosDelay: "400",
   },
   {
@@ -94,7 +92,7 @@ const additionalProductsData = [
     title: "Traditional Market Basket",
     rating: 4.7,
     color: "Multicolor",
-    price: "Price: 95 cedis",
+    price: "95 cedis",
     aosDelay: "600",
   },
 ];
@@ -108,6 +106,7 @@ const Products = () => {
     setShowAll(true); // Set showAll to true
     setProducts([...initialProductsData, ...additionalProductsData]); // Combine initial and additional baskets
   };
+
   const handleShowLess = () => {
     setShowAll(false); // Set showAll to false
     setProducts(initialProductsData); // Reset to initial baskets
@@ -125,8 +124,7 @@ const Products = () => {
             Handcrafted Baskets
           </h1>
           <p data-aos="fade-up" className="text-xs text-gray-400">
-            Explore our collection of beautifully crafted baskets, perfect for
-            storage, decoration, and everyday use.
+            Explore our collection of beautifully crafted baskets, perfect for storage, decoration, and everyday use.
           </p>
         </div>
         {/* Body section */}
@@ -142,7 +140,7 @@ const Products = () => {
               >
                 <img
                   src={data.img}
-                  alt=""
+                  alt={data.title}
                   className="h-[220px] w-[150px] object-cover rounded-md"
                 />
                 <div>
@@ -157,27 +155,25 @@ const Products = () => {
               </div>
             ))}
           </div>
-          {/* View all button */}
-          {!showAll && ( // Only show the button if not all baskets are displayed
-            <div className="flex justify-center">
+          {/* Buttons Section */}
+          <div className="flex justify-center gap-4 mt-10">
+            {!showAll && ( // Show "View All Baskets" only when not all items are displayed
               <button
                 onClick={handleViewAll}
-                className="text-center mt-10 cursor-pointer bg-primary text-white py-1 px-5 rounded-md"
+                className="text-center cursor-pointer bg-primary text-white py-2 px-5 rounded-md"
               >
                 View All Baskets
               </button>
-              {showAll && (
-                <div className="flex justify-center">
-                  <button
-                    onClick={handleShowLess}
-                    className="text-center mt-10 cursor-pointer bg-gray-500 text-white py-1 px-5 rounded-md"
-                  >
-                    Show Less
-                  </button>
-                </div>
-              )}
-            </div>
-          )}
+            )}
+            {showAll && ( // Show "Show Less" only when all items are displayed
+              <button
+                onClick={handleShowLess}
+               className="text-center cursor-pointer bg-primary text-white py-2 px-5 rounded-md"
+              >
+                Show Less
+              </button>
+            )}
+          </div>
         </div>
       </div>
     </div>
