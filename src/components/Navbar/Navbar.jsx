@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom"; // Import Link
 import Logo from "../../assets/logo.png";
 import { IoMdSearch } from "react-icons/io";
 import { FaCartShopping } from "react-icons/fa6";
@@ -9,45 +10,37 @@ const Menu = [
   {
     id: 1,
     name: "Home",
-    link: "/#",
+    link: "/",
   },
   {
     id: 2,
-    name: "Collections",
-    link: "/#services",
+    name: "Products",
+    link: "/products",
   },
   {
     id: 3,
     name: "About",
-    link: "/#",
+    link: "/about",
   },
-  {
-    id: 3,
-    name: "Care",
-    link: "/#",
-  },
-  {
-    id: 3,
-    name: "Contact",
-    link: "/#",
-  },
+  
+ 
 ];
 
 const DropdownLinks = [
   {
     id: 1,
     name: "Trending Products",
-    link: "/#",
+    link: "/trending",
   },
   {
     id: 2,
     name: "Best Selling",
-    link: "/#",
+    link: "/best-selling",
   },
   {
     id: 3,
     name: "Top Rated",
-    link: "/#",
+    link: "/top-rated",
   },
 ];
 
@@ -58,10 +51,10 @@ const Navbar = ({ handleOrderPopup }) => {
       <div className="bg-primary/40 py-2">
         <div className="container flex justify-between items-center">
           <div>
-            <a href="#" className="font-bold text-2xl sm:text-3xl flex gap-2">
+            <Link to="/" className="font-bold text-2xl sm:text-3xl flex gap-2">
               <img src={Logo} alt="Logo" className="w-10" />
               BasketWeave.co
-            </a>
+            </Link>
           </div>
 
           {/* search bar */}
@@ -98,12 +91,12 @@ const Navbar = ({ handleOrderPopup }) => {
         <ul className="sm:flex hidden items-center gap-4">
           {Menu.map((data) => (
             <li key={data.id}>
-              <a
-                href={data.link}
+              <Link
+                to={data.link}
                 className="inline-block px-4 hover:text-primary duration-200"
               >
                 {data.name}
-              </a>
+              </Link>
             </li>
           ))}
           {/* Simple Dropdown and Links */}
@@ -118,12 +111,12 @@ const Navbar = ({ handleOrderPopup }) => {
               <ul>
                 {DropdownLinks.map((data) => (
                   <li key={data.id}>
-                    <a
-                      href={data.link}
+                    <Link
+                      to={data.link}
                       className="inline-block w-full rounded-md p-2 hover:bg-primary/20 "
                     >
                       {data.name}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>
