@@ -3,9 +3,10 @@ import Img1 from "../../assets/women/Basket5.jpg";
 import Img2 from "../../assets/women/Basket6.jpg";
 import Img3 from "../../assets/women/Basket7.jpg";
 import Img4 from "../../assets/women/Basket8.jpg";
-import Basket1 from "../../assets/hero/basket4.png"
-import Basket3 from "../../assets/hero/Basket3.png";
-import Basket2 from "../../assets/hero/Basket2.png";
+import Basket1 from "../../assets/hero/basket4.png";
+import Basket3 from "../../assets/hero/Basket3.jpg";
+import Basket2 from "../../assets/hero/Basket2.jpg";
+import Basket4 from "../../assets/hero/Basket4.jpg";
 import Basket4 from "../../assets/hero/Basket4.png";
 import { FaStar } from "react-icons/fa6";
 
